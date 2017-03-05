@@ -1,15 +1,15 @@
-#include "Arr"
+#include "list.h"
 
 static List* new_list(NodeTag type)
 {
 	List	   *new_list;
 	ListCell   *new_head;
 
-	new_head = (ListCell *) palloc(sizeof(*new_head));
+	new_head = (ListCell *)malloc(sizeof(*new_head));
 	new_head->next = NULL;
 	/* new_head->data is left undefined! */
 
-	new_list = (List *) palloc(sizeof(*new_list));
+	new_list = (List *)malloc(sizeof(*new_list));
 	new_list->type = type;
 	new_list->length = 1;
 	new_list->head = new_head;
@@ -23,7 +23,7 @@ static void new_head_cell(List *list)
 {
 	ListCell   *new_head;
 
-	new_head = (ListCell *) palloc(sizeof(*new_head));
+	new_head = (ListCell *) malloc(sizeof(*new_head));
 	new_head->next = list->head;
 
 	list->head = new_head;
@@ -35,7 +35,7 @@ static void new_tail_cell(List *list)
 {
 	ListCell   *new_tail;
 
-	new_tail = (ListCell *) palloc(sizeof(*new_tail));
+	new_tail = (ListCell *) malloc(sizeof(*new_tail));
 	new_tail->next = NULL;
 
 	list->tail->next = new_tail;

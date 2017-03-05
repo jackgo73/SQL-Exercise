@@ -2,7 +2,6 @@
 #define ARRAY_H
 
 #include <assert.h>
-#include <stdbool.h>
 
 
 #define MAXSIZE 1000
