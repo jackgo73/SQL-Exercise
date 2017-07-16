@@ -10,22 +10,22 @@ PK and FK stand for primary key and foreign key respectively.
 
 ```sql
 CREATE TABLE Manufacturers (
-    Code          integer PRIMARY KEY,
-    Name          text
+    Code integer PRIMARY KEY NOT NULL,
+    Name text NOT NULL
 );
 
 
 CREATE TABLE Products (
-    Code          integer PRIMARY KEY,
-    Name          text,
-    Price         real,
-    Manufacturer  integer REFERENCES Manufacturers (Code)
+    Code          integer PRIMARY KEY NOT NULL,
+    Name          text NOT NULL,
+    Price         real NOT NULL,
+    Manufacturer  integer NOT NULL CONSTRAINT fk_Manufacturers_Code REFERENCES Manufacturers (Code)
 );
 
 
 ```
 
-## Generated Data
+## Sample Dataset
 ```sql
 INSERT INTO Manufacturers values ( generate_series(1,10000), md5(random()::text));
 
@@ -36,6 +36,28 @@ INSERT INTO Products values (
     (random()*10000)::integer
 );
 
+```
+
+OR
+
+```
+INSERT INTO Manufacturers(Code,Name) VALUES(1,'Sony');
+INSERT INTO Manufacturers(Code,Name) VALUES(2,'Creative Labs');
+INSERT INTO Manufacturers(Code,Name) VALUES(3,'Hewlett-Packard');
+INSERT INTO Manufacturers(Code,Name) VALUES(4,'Iomega');
+INSERT INTO Manufacturers(Code,Name) VALUES(5,'Fujitsu');
+INSERT INTO Manufacturers(Code,Name) VALUES(6,'Winchester');
+
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
+INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
 ```
 
 ## Exercises
@@ -200,4 +222,34 @@ SELECT A.Name, A.Price, F.Name
         WHERE A.Manufacturer = F.Code
     );
 ```
+
+17. Add a new product: Loudspeakers, $70, manufacturer 2.
+
+```sql
+INSERT INTO Products( Name , Price , Manufacturer) VALUES ( 'Loudspeakers' , 70 , 2 );
+```
+
+18. Update the name of product 8 to "Laser Printer".
+
+```sql
+UPDATE Products
+  SET Name = 'Laser Printer'
+  WHERE Code = 8;
+```
+
+19. Apply a 10% discount to all products.
+
+```sql
+UPDATE Products
+  SET Price = Price * 0.9;
+```
+
+20. Apply a 10% discount to all products with a price larger than or equal to $120.
+
+```sql
+UPDATE Products
+  SET Price = Price * 0.9
+  WHERE Price >= 120;
+```
+
 
