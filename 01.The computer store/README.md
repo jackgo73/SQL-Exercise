@@ -27,7 +27,7 @@ CREATE TABLE Products (
 
 ## Sample Dataset
 ```sql
-INSERT INTO Manufacturers values ( generate_series(1,10000), md5(random()::text));
+INSERT INTO Manufacturers values ( generate_series(0,10000), md5(random()::text));
 
 INSERT INTO Products values ( 
     generate_series(1,100000), 
