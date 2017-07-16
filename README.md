@@ -15,3 +15,7 @@ Excellent SQL learning materials, in the book contains a large number of example
 ## Database
 
 Postgresql9.6.2
+
+## Exercise
+
+[01.The computer store/README.md](01.The computer store/READ)
