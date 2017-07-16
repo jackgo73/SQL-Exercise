@@ -18,5 +18,5 @@ Postgresql9.6.2
 
 ## Exercise
 
-01.The computer store   [01.The computer store](01.The computer store/README.md)
+[01.The computer store](01.The%20computer%20store/README.md)
 
