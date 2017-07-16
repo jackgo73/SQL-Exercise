@@ -194,11 +194,11 @@ SELECT Name, Price FROM Products WHERE Price=(SELECT MIN(Price) FROM Products);
 
 https://stackoverflow.com/questions/45126123/use-groupy-by-to-get-the-name-and-price-of-its-most-expensive-product
 
-```sql
 The following query will give the most expensive price for each manufacturer product. 
 It will return multiple products in the event of a tie. If you just want one product 
 per manufacturer regardless of a tie, replace DENSE_RANK with ROW_NUMBER.
 
+```sql
 SELECT
     t.m_name,
     t.p_name,
@@ -218,7 +218,7 @@ WHERE t.dr = 1;
 ```
 
 
-```
+```sql
 SELECT Manufacturers.Name AS ManufacturersName, MAX(Price)
   FROM Products, Manufacturers
   WHERE Products.Manufacturer = Manufacturers.Code
