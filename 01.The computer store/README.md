@@ -184,7 +184,7 @@ SELECT AVG(Price), Manufacturers.Name
 
 15. Select the name and price of the cheapest product.
 
-```
+```sql
 SELECT Name, Price FROM Products ORDER BY Price ASC LIMIT 1;
 
 SELECT Name, Price FROM Products WHERE Price=(SELECT MIN(Price) FROM Products);
