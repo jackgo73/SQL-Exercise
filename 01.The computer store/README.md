@@ -2,6 +2,8 @@
 
 ## Relational Schema
 
+`Postgresql9.6.2`
+
 ![Computer-store-db](img/Computer-store-db.png)
 
 Please note the datatypes given are SQLite datatypes.
@@ -21,7 +23,6 @@ CREATE TABLE Products (
     Price         real NOT NULL,
     Manufacturer  integer NOT NULL CONSTRAINT fk_Manufacturers_Code REFERENCES Manufacturers (Code)
 );
-
 
 ```
 
