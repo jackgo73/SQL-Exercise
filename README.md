@@ -16,6 +16,10 @@ Excellent SQL learning materials, in the book contains a large number of example
 
 Postgresql9.6.2
 
+Oracle
+
+Mysql
+
 ## Exercise
 
 [01.The computer store](01.The%20computer%20store/README.md)
