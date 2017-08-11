@@ -108,6 +108,11 @@ SELECT *
  WHERE capacity <
        (SELECT count(*) FROM boxes WHERE warehouse = warehouses.code)
 
+SELECT warehouses.Code
+  FROM warehouses JOIN boxes ON warehouses.code = boxes.warehouse
+  GROUP BY warehouses.code,warehouses.capacity 
+  HAVING Count(boxes.code) > warehouses.capacity
+
 -- for postgresql
 SELECT warehouses.Code
   FROM warehouses JOIN boxes ON warehouses.code = boxes.warehouse
