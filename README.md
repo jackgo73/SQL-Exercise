@@ -20,7 +20,9 @@ Oracle
 
 Mysql
 
-## Exercise
 
-[01.The computer store](01.The%20computer%20store/README.md)
+
+## MoveTo
+
+http://mutex73.github.io/
 
