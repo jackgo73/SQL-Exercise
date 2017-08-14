@@ -1,4 +1,4 @@
-# mutex73/My SQL Exercise
+# mutex73/SQL-Exercise
 
 ## Book Introduction
 
