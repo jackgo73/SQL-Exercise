@@ -23,10 +23,10 @@ Mysql
 ## Contents
 
 [The computer store](01.The%20computer%20store/README.md)
-[Employee management]()
-[The warehouse]()
-[Movie theatres]()
-[Pieces and providers]()
-[Scientists]()
-[Planet Express]()
-[The Hospital]()
+[Employee management](02.Employee%20management/README.md)
+[The warehouse](03.The%20warehouse/README.md)
+[Movie theatres](04.Movie%20theatres/README.md)
+[Pieces and providers](05.Pieces%20and%20providers/README.md)
+[Scientists](06.Scientists/README.md)
+[Planet Express](07.Planet%20Express/README.md)
+[The Hospital](08.The%20Hospital/README.md)
