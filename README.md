@@ -22,7 +22,7 @@ Mysql
 
 ## Contents
 
-[The computer store](01.The computer store/README.md)
+[The computer store](01.The%20computer%20store/README.md)
 [Employee management]()
 [The warehouse]()
 [Movie theatres]()
